@@ -3,17 +3,22 @@
 
 using namespace std;
 
-class demoTest {
-    public:
-        int position;
-    private:
-        int rank;
+class DemoTest {
+  public:
+    int position;
+
+    int GetPosition() {
+      return 0;
+    }
+
+  private:
+    int rank;
 };
 
 int main() {
-    demoTest demo_test;
-    demo_test.position = 0;
+  DemoTest demo_test;
+  demo_test.position = 0;
 
-    cout << "demo test" << endl;
-    return 0;
+  cout << "demo test" << endl;
+  return 0;
 }
