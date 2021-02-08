@@ -18,7 +18,7 @@ class Solution {
    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
    ListNode* current = new ListNode();
    ListNode* ret_head = current;
-   int res = 0;
+   int rest = 0;
    while (l1 != nullptr || l2 != nullptr) {
      int sum = 0;
      if (l1 != nullptr) {
@@ -29,18 +29,17 @@ class Solution {
        sum += l2 ->val;
        l2 = l2->next;
      }
-     res = sum / 10;
-     current-> val += sum % 10;
-     current->next = new ListNode(res);
-     current = current->next;
+     rest = sum / 10;
+     current->val += sum % 10;
+     if (rest != 0 || l1 != nullptr && l1->next != nullptr ||
+         l2 != nullptr && l2->next != nullptr) {
+       current->next = new ListNode(rest);
+       current = current->next;
+     }
    }
    return ret_head;
   }
 };
-
-void test_function() {
-  cout << "test function" << endl;
-}
 
 int main(int argc, char *argv[]) {
   ListNode *l1 = new ListNode(2);
