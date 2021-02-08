@@ -31,8 +31,7 @@ class Solution {
      }
      rest = sum / 10;
      current->val = sum % 10;
-     if (rest != 0 || l1 != nullptr || l1->next != nullptr ||
-         l2 != nullptr || l2->next != nullptr) {
+     if (rest != 0 || l1 != nullptr || l2 != nullptr) { 
        current->next = new ListNode(rest);
        current = current->next;
      }
