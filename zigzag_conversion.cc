@@ -7,6 +7,9 @@ using namespace std;
 class Solution {
  public:
    string convert(string s, int numRows) {
+     if (numRows == 1) {
+       return s;
+     }
      string ret_string = "";
      char zigzag[1000 + 5][1000 + 5];
      int circle = numRows;
@@ -21,7 +24,6 @@ class Solution {
            break;
          }
          if (col % (numRows - 1) == 0) {
-           cout << col << row << endl;
            zigzag[row][col] = s.at(s_cnt);
            s_cnt ++;
          } else if (row == circle) {
