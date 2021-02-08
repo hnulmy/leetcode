@@ -10,18 +10,15 @@ class Solution {
  public:
    int minSubArrayLen(int target, vector<int>& nums) {
      int min_size = 0x7fffffff;
-     int dp[100000 + 1];
-     int current_size = 0;
-     for (int raw = 0; raw < nums.size(); raw ++) {
-       dp[raw] = nums[raw];
-       for (int col = raw; col < nums.size(); col ++) {
-         if (col != raw) {
-           dp[col] = dp[col - 1] + nums[col];
-         }
-         if (target <= dp[col]) {
-           current_size = col - raw + 1;
-           min_size = min_size < current_size ? min_size : current_size;
-         }
+     int sum = 0;
+     int pre_index = 0;
+     for (int index = 0; index < nums.size(); index ++) {
+       sum += nums[index];
+       while (target <= sum) {
+         int current_size = index - pre_index + 1;
+         min_size = min_size < current_size ? min_size : current_size;
+         sum -= nums[pre_index];
+         pre_index ++;
        }
      }
      return min_size == 0x7fffffff ? 0 : min_size;
