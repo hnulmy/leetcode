@@ -4,24 +4,21 @@
 
 using namespace std;
 
+// https://leetcode.com/problems/minimum-size-subarray-sum/
+
 class Solution {
  public:
    int minSubArrayLen(int target, vector<int>& nums) {
      int min_size = 0x7fffffff;
-     vector<vector<int>> dp_vec;
+     int dp[100000 + 1];
      int current_size = 0;
      for (int raw = 0; raw < nums.size(); raw ++) {
-       if (raw > 0) {
-         cout << raw << endl;
-         dp_vec[raw][raw] = nums[raw];
-       }
+       dp[raw] = nums[raw];
        for (int col = raw; col < nums.size(); col ++) {
-         if (raw == 0 && col == 0) {
-           dp_vec[0][0] = nums[0];
-         } else {
-           dp_vec[raw][col] = dp_vec[raw][col - 1] + nums[col];
+         if (col != raw) {
+           dp[col] = dp[col - 1] + nums[col];
          }
-         if (target <= dp_vec[raw][col]) {
+         if (target <= dp[col]) {
            current_size = col - raw + 1;
            min_size = min_size < current_size ? min_size : current_size;
          }
@@ -33,9 +30,10 @@ class Solution {
 
 int main(int argc, char* argv[]) {
   // update while scanning
-  vector<int> test_vec = {1, 2, 5, 6};
+  vector<int> test_nums = {2, 3, 1, 2, 4, 3};
+  int test_target = 7;
   Solution solution;
-  int ret = solution.minSubArrayLen(6, test_vec);
+  int ret = solution.minSubArrayLen(test_target, test_nums);
   cout << ret << endl;
   return 0;
 }
