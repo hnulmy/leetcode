@@ -1,7 +1,7 @@
 # leetcode
 
-- leetcode_2: Add Two Numbers
+- Add Two Numbers
 
-- leetcode_448: Find All Numbers Disappeared in an Array
+- Find All Numbers Disappeared in an Array
 
 
