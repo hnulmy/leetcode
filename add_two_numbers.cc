@@ -20,7 +20,7 @@ class Solution {
    ListNode* ret_head = current;
    int rest = 0;
    while (l1 != nullptr || l2 != nullptr) {
-     int sum = 0;
+     int sum = rest;
      if (l1 != nullptr) {
        sum += l1->val;
        l1 = l1->next;
@@ -30,9 +30,9 @@ class Solution {
        l2 = l2->next;
      }
      rest = sum / 10;
-     current->val += sum % 10;
-     if (rest != 0 || l1 != nullptr && l1->next != nullptr ||
-         l2 != nullptr && l2->next != nullptr) {
+     current->val = sum % 10;
+     if (rest != 0 || l1 != nullptr || l1->next != nullptr ||
+         l2 != nullptr || l2->next != nullptr) {
        current->next = new ListNode(rest);
        current = current->next;
      }
