@@ -30,12 +30,9 @@ class Solution {
        l2 = l2->next;
      }
      res = sum / 10;
-     current-> val = sum % 10;
-     current->next = new ListNode();
+     current-> val += sum % 10;
+     current->next = new ListNode(res);
      current = current->next;
-   }
-   if (res == 1) {
-     current->val = res;
    }
    return ret_head;
   }
@@ -46,9 +43,13 @@ void test_function() {
 }
 
 int main(int argc, char *argv[]) {
-  ListNode *l1 = new ListNode(4);
-  ListNode *l2 = new ListNode(6);
-  
+  ListNode *l1 = new ListNode(2);
+  l1->next = new ListNode(4);
+  l1->next->next = new ListNode(3);
+  ListNode *l2 = new ListNode(5);
+  l2->next = new ListNode(6);
+  l2->next->next = new ListNode(4);
+
   Solution solution;
   ListNode *l3 = solution.addTwoNumbers(l1, l2);
 
