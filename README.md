@@ -1,4 +1,2 @@
-# leetcode
-
-https://leetcode.com/
+# leetcode:https://leetcode.com/
 
