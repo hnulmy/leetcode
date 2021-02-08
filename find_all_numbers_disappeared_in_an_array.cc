@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Problem URL: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+// https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 
 class Solution {
  public:
