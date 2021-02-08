@@ -2,11 +2,9 @@
 #include <iostream>
 #include <array>
 #include <vector>
-
 using namespace std;
 
 // https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
-
 class Solution {
  public:
    vector<int> findDisappearedNumbers(vector<int>& nums) {
