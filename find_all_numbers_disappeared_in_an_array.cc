@@ -5,8 +5,8 @@
 
 using namespace std;
 
-// Find All Numbers Disappeared in an Array
-// URL: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+// Problem URL: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+
 class Solution {
  public:
    vector<int> findDisappearedNumbers(vector<int>& nums) {
