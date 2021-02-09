@@ -3,16 +3,14 @@
 
 using namespace std;
 
-//
+// https://leetcode.com/problems/longest-palindromic-substring/
 
 class Solution {
  public:
    string longestPalindrome(string s) {
      string palindrome("");
      for (int index = 0; index < s.length(); index ++) {
-       //cout << index << endl;
        int left_len = 0;
-       // s.at(index - left_len - 1) == s.at(index + left_len)
        while (0 <= index - left_len - 1 && index + left_len < s.length() &&
               s.at(index - left_len - 1) == s.at(index + left_len)) {
          left_len ++;
