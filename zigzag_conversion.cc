@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -13,6 +14,8 @@ class Solution {
      }
      string ret_string = "";
      char zigzag[1000 + 5][1000 + 5];
+     //memset(zigzag, 0, sizeof(zigzag));
+     cout << zigzag[0][0] << zigzag[100][100] << endl;
      int circle = numRows;
      int s_cnt = 0;
      for (int col = 0; col < 1001; col ++) {
@@ -31,14 +34,22 @@ class Solution {
            zigzag[row][col] = s.at(s_cnt);
            s_cnt ++;
          } else {
-           zigzag[row][col] = ' ';
+           continue;
          }
        }
      }
+     s_cnt = 0;
      for (int row = 0; row < numRows; row ++) {
+       if (s.length() <= s_cnt) {
+         break;
+       }
        for (int col = 0; col < 1001; col ++) {
-         if ('A' <= zigzag[row][col] && zigzag[row][col] <= 'Z') {
+         if (s.length() <= s_cnt) {
+           break;
+         }
+         if (zigzag[row][col] != 0) {
            ret_string += zigzag[row][col];
+           s_cnt ++;
          }
        }
      }
