@@ -37,7 +37,7 @@ class Solution {
      }
      for (int row = 0; row < numRows; row ++) {
        for (int col = 0; col < 1001; col ++) {
-         if (zigzag[row][col] != ' ') {
+         if ('A' <= zigzag[row][col] && zigzag[row][col] <= 'Z') {
            ret_string += zigzag[row][col];
          }
        }
