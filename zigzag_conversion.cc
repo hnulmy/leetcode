@@ -14,7 +14,7 @@ class Solution {
      }
      string ret_string = "";
      char zigzag[1000 + 5][1000 + 5];
-     //memset(zigzag, 0, sizeof(zigzag));
+     memset(zigzag, 0, sizeof(zigzag));
      cout << zigzag[0][0] << zigzag[100][100] << endl;
      int circle = numRows;
      int s_cnt = 0;
