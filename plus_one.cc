@@ -9,17 +9,12 @@ using namespace std;
 class Solution {
  public:
   vector<int> plusOne(vector<int>& digits) {
-<<<<<<< HEAD
     vector<int> vec;
-=======
-    vector<int> ret_vec;
->>>>>>> 0281534bf7aebd62ab7314a05d8dd121b45dd2eb
     int index = digits.size() - 1;
     int number = 10;
     while (index >= 0) {
       number = number / 10 + digits[index];
       if (number == 10) {
-<<<<<<< HEAD
         vec.push_back(0);
       } else {
         vec.push_back(number);
