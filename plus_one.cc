@@ -29,19 +29,6 @@ class Solution {
       ret.push_back(vec.at(index));
     }
     return ret;
-=======
-        ret_vec.push_back(0);
-      } else {
-        ret_vec.push_back(number);
-      }
-      index --;
-    }
-    if (ret_vec[ret_vec.size() - 1] == 0) {
-      ret_vec.push_back(1);
-    }
-    ret_vec.reserve(ret_vec.size());
-    return ret_vec;
->>>>>>> 0281534bf7aebd62ab7314a05d8dd121b45dd2eb
   }
 };
 
